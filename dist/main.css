@@ -7,12 +7,14 @@
 :root {
   --background-gray: #f1f1f1;
   --background-white: #fff;
+  --color-red: #c31a62;
 
   --text-logo: 24px;
 
   --margin-s: 4px;
   --margin-m: 8px;
   --margin-l: 12px;
+  --margin-logo: 30px;
 }
 
 html {
@@ -45,4 +47,44 @@ html {
   background: var(--background-white);
   max-width: 300px;
   margin-right: var(--margin-m);
+}
+
+.content {
+  display: flex;
+}
+
+.navigation-bar {
+  max-width: 200px;
+  padding: 0 var(--margin-logo);
+}
+
+.navigation-bar__compose-button {
+  margin-top: var(--margin-l) !important;
+}
+
+.navigation-bar__nav {
+  margin-top: var(--margin-l);
+}
+
+.navigation-bar__ul {
+  list-style-type: none;
+}
+
+.navigation-bar__li:first-child {
+  margin: 0 0 var(--margin-s);
+}
+
+.navigation-bar__li,
+.navigation-bar__li--selected {
+  margin: var(--margin-s) 0;
+}
+
+.navigation-bar__li--selected {
+  color: var(--color-red);
+  font-weight: bold;
+}
+
+.navigation-bar__link {
+  text-decoration: none;
+  color: inherit;
 }

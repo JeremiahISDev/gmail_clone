@@ -8,7 +8,8 @@
     "server:watch": "npx nodemon ./server.js",
     "webpack:watch": "npx webpack --watch",
     "css:watch": "npx postcss --watch ./src/public/css/main.css -o ./dist/main.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,8 @@
     "express": "^4.17.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-router": "^5.2.0"
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -34,6 +36,7 @@
     "@babel/preset-react": "^7.12.1",
     "babel-loader": "^8.1.0",
     "html-webpack-plugin": "^4.5.0",
+    "jest": "^26.6.3",
     "nodemon": "^2.0.6",
     "postcss": "^8.1.4",
     "postcss-cli": "^8.2.0",

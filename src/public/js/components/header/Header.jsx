@@ -17,7 +17,7 @@ class Header extends React.Component {
   render() {
     return (
       <header className="header">
-        <span className="header__logo">Gmail - Clone</span>
+        <span className="header__logo">Gmail</span>
         <form className="header__search-form" onSubmit={this.onSubmit}>
           <Input fullWidth className="header__search-field"/>
           <Button type="submit" variant="contained" color="primary">
