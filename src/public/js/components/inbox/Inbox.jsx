@@ -1,10 +1,40 @@
-const React = require("react");
+import React from "react";
 
-const {useLocation} = require("react-router-dom");
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import InboxRow from "./InboxRow";
+import InboxEmail from "./InboxEmail";
+import timestampSort from  "./timestampSort"
 
-const Inbox = () => {
-  const location = useLocation();
-  return <h1>{location.pathname}</h1>
-};
+class Inbox extends React.Component {
+  state = {
+    emails: []
+  }
 
-module.exports = Inbox;
+  async componentDidMount() {
+    const response = await fetch("/emails");
+    const data = await response.json();
+    const sortedEmails = data.sort(timestampSort);
+    const emails = sortedEmails.map(incomingEmail => InboxEmail(incomingEmail));
+    this.setState({
+      emails
+    });
+  }
+
+  render() {
+    return (
+      <Table>
+        <TableBody>
+          {this.state.emails.map(email => (
+            <InboxRow 
+              key={email.id}
+              email={email}
+             />  
+          ))}
+        </TableBody>
+      </Table>
+    )
+  }
+}
+
+export default Inbox;

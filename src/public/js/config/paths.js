@@ -5,6 +5,8 @@ const paths = {
   sentMail: "/sent-mail",
   drafts: "/drafts",
   spam: "/spam",
+  emailTemplate: "/emails/:id",
+  email: (emailId) => `/emails/${emailId}`,
 };
 
-module.exports = paths;
+export default paths;

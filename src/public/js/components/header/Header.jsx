@@ -1,15 +1,11 @@
-const React = require("react");
-const Input = require("@material-ui/core/Input").default;
-const Button = require("@material-ui/core/Button").default;
-const SearchIcon = require("@material-ui/icons/Search").default;
+import React from "react";
+import Input from "@material-ui/core/Input";
+import Button from "@material-ui/core/Button";
+import SearchIcon from "@material-ui/icons/Search";
 
 class Header extends React.Component {
-  constructor() {
-    super();
-    this.onSubmit = this.onSubmit.bind(this);
-  }
 
- onSubmit(event) {
+ onSubmit = (event) => {
     event.preventDefault();
     alert("submit");
   }
@@ -29,4 +25,4 @@ class Header extends React.Component {
   }
 }
 
-module.exports = Header;
+export default Header;

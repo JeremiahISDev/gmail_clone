@@ -1,10 +1,10 @@
-const React = require('react');
-const NavigationListItem = require("./NavigationListItem");
-const Paths = require("../../config/paths");
-const isSelected = require("./isSelected");
-const useLocation = require("react-router-dom").useLocation;
+import React from 'react';
+import NavigationListItem from "./NavigationListItem";
+import Paths from "../../config/paths";
+import isSelected from "./isSelected";
+import {useLocation} from "react-router-dom";
 
-function NavigationList() {
+const NavigationList = () => {
     const location = useLocation();
     const pathname = location.pathname;
     
@@ -40,4 +40,4 @@ function NavigationList() {
         </nav>
     )
 }
-module.exports = NavigationList;
+export default NavigationList;

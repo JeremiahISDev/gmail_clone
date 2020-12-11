@@ -1,4 +1,4 @@
-const isSelected = require("../isSelected");
+import isSelected from "../isSelected";
 
 describe("isSelected", () => {
   it("has a module", () => {
