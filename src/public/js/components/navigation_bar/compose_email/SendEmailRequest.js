@@ -1,4 +1,10 @@
-const SendEmailRequest = (recipients, subject, message) => {
+const SendEmailRequest = (recipientsString, subject, message) => {
+  //look for spaces, tabs, commas and semi-colons
+  const regex = /(\s|,|;|\t)/;
+  const recipients = recipientsString
+    .split(regex)
+    .filter((str) => str.trim())
+    .filter((str) => !regex.test(str));
   const data = {
     recipients,
     subject,
