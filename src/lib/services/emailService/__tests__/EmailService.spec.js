@@ -1,4 +1,4 @@
-const EmailService = require("../EmailService").default;
+const EmailService = require("../EmailService");
 
 describe("EmailService", () => {
   it("has a module", () => {

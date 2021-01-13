@@ -5,7 +5,11 @@ describe("EmailModel", () => {
   let db;
 
   beforeAll((done) => {
-    db = mongoose.connect("mongodb://0.0.0.0:27017/test", done);
+    db = mongoose.connect(
+      "mongodb://localhost:27017/test",
+      { useNewUrlParser: true, useUnifiedTopology: true },
+      done
+    );
   });
 
   afterAll((done) => {
@@ -24,7 +28,6 @@ describe("EmailModel", () => {
     const email = new EmailModel({ recipients, subject, message, timestamp });
     await email.save();
     const emailInDatabase = await EmailModel.findById(email.id);
-
     const expected = {
       recipients,
       isImportant: false,
@@ -36,6 +39,6 @@ describe("EmailModel", () => {
     };
     const expectedString = JSON.stringify(expected);
     const actual = JSON.stringify(emailInDatabase);
-    expect(actual).toEqual(expectedString);
+    await expect(expectedString).toEqual(actual);
   });
 });

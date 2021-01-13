@@ -22,4 +22,4 @@ const SendEmailRequest = (recipientsString, subject, message) => {
   return request;
 };
 
-export default SendEmailRequest;
+module.exports = SendEmailRequest;
